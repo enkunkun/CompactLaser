@@ -7,7 +7,7 @@
  * http://www.mod-buildcraft.com/MMPL-1.0.txt
  */
 
-package net.enkun.mods.AdvancedLaser;
+package net.enkun.mods.CompactLaser;
 
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.RenderBlocks;

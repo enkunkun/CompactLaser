@@ -7,7 +7,7 @@
  * http://www.mod-buildcraft.com/MMPL-1.0.txt
  */
 
-package net.enkun.mods.AdvancedLaser;
+package net.enkun.mods.CompactLaser;
 
 import java.util.ArrayList;
 
@@ -20,9 +20,9 @@ import net.minecraftforge.common.ForgeDirection;
 import buildcraft.core.CreativeTabBuildCraft;
 import buildcraft.core.DefaultProps;
 
-public class BlockAdvLaser extends BlockContainer {
+public class BlockCompactLaser extends BlockContainer {
 
-	public BlockAdvLaser(int i) {
+	public BlockCompactLaser(int i) {
 		super(i, Material.iron);
 		setHardness(0.5F);
 		setCreativeTab(CreativeTabBuildCraft.tabBuildCraft);

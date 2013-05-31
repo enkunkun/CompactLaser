@@ -1,4 +1,4 @@
-package net.enkun.mods.AdvancedLaser;
+package net.enkun.mods.CompactLaser;
 
 import cpw.mods.fml.client.registry.RenderingRegistry;
 

@@ -6,7 +6,7 @@
  * granted by the copyright holder.
  */
 
-package net.enkun.mods.AdvancedLaser;
+package net.enkun.mods.CompactLaser;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
@@ -21,9 +21,9 @@ import buildcraft.api.recipes.AssemblyRecipe;
 import buildcraft.core.DefaultProps;
 import buildcraft.core.Version;
 import buildcraft.core.proxy.CoreProxy;
-import net.enkun.mods.AdvancedLaser.BlockAdvLaser;
-import net.enkun.mods.AdvancedLaser.CommonProxy;
-import net.enkun.mods.AdvancedLaser.TileLaser;
+import net.enkun.mods.CompactLaser.BlockCompactLaser;
+import net.enkun.mods.CompactLaser.CommonProxy;
+import net.enkun.mods.CompactLaser.TileLaser;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.Init;
 import cpw.mods.fml.common.Mod.Instance;
@@ -35,23 +35,23 @@ import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-@Mod(name = "AdvancedLaser", version = "0.1", useMetadata = false, modid = "AdvLaser", dependencies = "required-after:BuildCraft|Core;required-after:BuildCraft|Silicon;required-after:BuildCraft|Transport")
-@NetworkMod(channels = { "AdvLsr" }, packetHandler = PacketHandler.class, clientSideRequired = true, serverSideRequired = true)
-public class AdvancedLaser {
-	public static BlockAdvLaser AdvlaserBlock;
+@Mod(name = "CompactLaser", version = "0.1", useMetadata = false, modid = "CompactLaser", dependencies = "required-after:BuildCraft|Core;required-after:BuildCraft|Silicon;required-after:BuildCraft|Transport")
+@NetworkMod(channels = { "CompactLaser" }, packetHandler = PacketHandler.class, clientSideRequired = true, serverSideRequired = true)
+public class CompactLaser {
+	public static BlockCompactLaser CompactLaserBlock;
 
-	@Instance("AdvLaser")
-	public static AdvancedLaser instance;
+	@Instance("CompactLaser")
+	public static CompactLaser instance;
 
 	@Init
 	public void load(FMLInitializationEvent evt) {
-		CoreProxy.proxy.registerTileEntity(TileLaser.class, "net.enkun.mods.AdvancedLaser.TileLaser");
+		CoreProxy.proxy.registerTileEntity(TileLaser.class, "net.enkun.mods.CompactLaser.TileLaser");
 
-		new BptBlockRotateMeta(AdvlaserBlock.blockID, new int[] { 2, 5, 3, 4 }, true);
+		new BptBlockRotateMeta(CompactLaserBlock.blockID, new int[] { 2, 5, 3, 4 }, true);
 
 		CommonProxy.proxy.registerRenderers();
 		
-		CoreProxy.proxy.addCraftingRecipe(new ItemStack(AdvlaserBlock),
+		CoreProxy.proxy.addCraftingRecipe(new ItemStack(CompactLaserBlock),
 				new Object[] { "LLL", "L L", "LLL", Character.valueOf('L'), BuildCraftSilicon.laserBlock });
 		
 	}
@@ -59,10 +59,10 @@ public class AdvancedLaser {
 	@PreInit
 	public void initialize(FMLPreInitializationEvent evt) {
 
-		AdvlaserBlock = new BlockAdvLaser(1300);
-		AdvlaserBlock.setBlockName("AdvancedLaser");
-		LanguageRegistry.addName(AdvlaserBlock, "Advanced Laser");
-		GameRegistry.registerBlock(AdvlaserBlock);
+		CompactLaserBlock = new BlockCompactLaser(1300);
+		CompactLaserBlock.setBlockName("CompactLaser");
+		LanguageRegistry.addName(CompactLaserBlock, "Compact Laser");
+		GameRegistry.registerBlock(CompactLaserBlock, "CompactLaser");
 
 	}
 }
