@@ -62,7 +62,7 @@ public class CompactLaser {
 	public void initialize(FMLPreInitializationEvent evt) {
 		Configuration cfg = new Configuration(evt.getSuggestedConfigurationFile());
 		cfg.load();
-		Property PropCompactLaserBlock = cfg.get("", "CompactLaser", 1300);
+		Property PropCompactLaserBlock = cfg.get(Configuration.CATEGORY_BLOCK, "CompactLaser", 1300);
 		CompactLaserBlockId  = PropCompactLaserBlock.getInt();
 
 		CompactLaserBlock = new BlockCompactLaser(CompactLaserBlockId);
