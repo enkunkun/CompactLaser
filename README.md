@@ -1,4 +1,4 @@
-AdvancedLaser
+CompactLaser
 =============
 
 Minecraft BC Addon
