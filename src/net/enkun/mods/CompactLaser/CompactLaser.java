@@ -11,6 +11,7 @@ package net.enkun.mods.CompactLaser;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.common.Configuration;
 import net.minecraftforge.common.Property;
 import buildcraft.BuildCraftCore;
 import buildcraft.BuildCraftSilicon;
@@ -39,6 +40,7 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 @NetworkMod(channels = { "CompactLaser" }, packetHandler = PacketHandler.class, clientSideRequired = true, serverSideRequired = true)
 public class CompactLaser {
 	public static BlockCompactLaser CompactLaserBlock;
+	public int CompactLaserBlockId;
 
 	@Instance("CompactLaser")
 	public static CompactLaser instance;
@@ -58,8 +60,12 @@ public class CompactLaser {
 
 	@PreInit
 	public void initialize(FMLPreInitializationEvent evt) {
+		Configuration cfg = new Configuration(evt.getSuggestedConfigurationFile());
+		cfg.load();
+		Property PropCompactLaserBlock = cfg.get("", "CompactLaser", 1300);
+		CompactLaserBlockId  = PropCompactLaserBlock.getInt();
 
-		CompactLaserBlock = new BlockCompactLaser(1300);
+		CompactLaserBlock = new BlockCompactLaser(CompactLaserBlockId);
 		CompactLaserBlock.setBlockName("CompactLaser");
 		LanguageRegistry.addName(CompactLaserBlock, "Compact Laser");
 		GameRegistry.registerBlock(CompactLaserBlock, "CompactLaser");
