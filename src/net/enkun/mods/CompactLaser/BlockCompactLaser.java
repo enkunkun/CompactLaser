@@ -54,17 +54,17 @@ public class BlockCompactLaser extends BlockContainer {
 
 	@Override
 	public String getTextureFile() {
-		return DefaultProps.TEXTURE_BLOCKS;
+		return "/net/enkun/mods/CompactLaser/sprite.png";
 	}
 
 	@Override
 	public int getBlockTextureFromSideAndMetadata(int i, int j) {
 		if (i == ForgeDirection.values()[j].getOpposite().ordinal())
-			return 16 * 2 + 15;
+			return 2;
 		else if (i == j)
-			return 16 * 2 + 14;
+			return 1;
 		else
-			return 16 * 2 + 13;
+			return 0;
 
 	}
 

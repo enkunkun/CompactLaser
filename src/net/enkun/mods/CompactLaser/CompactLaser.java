@@ -52,6 +52,7 @@ public class CompactLaser {
 		new BptBlockRotateMeta(CompactLaserBlock.blockID, new int[] { 2, 5, 3, 4 }, true);
 
 		CommonProxy.proxy.registerRenderers();
+		CommonProxy.proxy.registerTextures();
 
 		GameRegistry.addRecipe(new ItemStack(CompactLaserBlock),
 				new Object[] { "LLL", "LOL", "LLL", Character.valueOf('L'), BuildCraftSilicon.laserBlock, Character.valueOf('O'), Block.obsidian });
