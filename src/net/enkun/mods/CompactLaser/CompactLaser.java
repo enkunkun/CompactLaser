@@ -36,7 +36,7 @@ import cpw.mods.fml.common.network.NetworkRegistry;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-@Mod(name = "CompactLaser", version = "0.3", useMetadata = false, modid = "CompactLaser", dependencies = "required-after:BuildCraft|Core;required-after:BuildCraft|Silicon;required-after:BuildCraft|Transport")
+@Mod(name = "CompactLaser", version = "0.4", useMetadata = false, modid = "CompactLaser", dependencies = "required-after:BuildCraft|Core;required-after:BuildCraft|Silicon;required-after:BuildCraft|Transport")
 @NetworkMod(channels = { "CompactLaser" }, packetHandler = PacketHandler.class, clientSideRequired = true, serverSideRequired = true)
 public class CompactLaser {
 	public static BlockCompactLaser CompactLaserBlock;
