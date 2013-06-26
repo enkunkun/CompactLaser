@@ -67,6 +67,7 @@ public class CompactLaser {
 		cfg.load();
 		Property PropCompactLaserBlock = cfg.get(Configuration.CATEGORY_BLOCK, "CompactLaser", 1300);
 		CompactLaserBlockId  = PropCompactLaserBlock.getInt();
+		cfg.save();
 
 		CompactLaserBlock = new BlockCompactLaser(CompactLaserBlockId);
 		CompactLaserBlock.setBlockName("CompactLaser");
